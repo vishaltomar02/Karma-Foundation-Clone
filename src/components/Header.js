@@ -20,24 +20,22 @@ const Header = () => {
               report@karmafoundation.ngo
             </div>
           </div>
-          <div style={{display: 'flex'}}>
-            <div className="social-icons">
-              <ul >
-                {
-                  socialIcons.map((item) => {
-                    return (<li key={item.name}>
-                      <div className={`social-circle ${item.name}`}>
-                        <i style={{color: `${item.iconColor}`, fontSize: '12px'}} class={`fab fa-${item.name}`} />
-                      </div>
-                    </li>);
-                  })
-                }
-              </ul>
-            </div>
-            <div className="header-buttons">
-              <button className="top-buttons" style={{marginRight: '5px'}}>Register a Case</button>
-              <button className="top-buttons">Sterilize a stray animal</button>
-            </div>
+          <div className="social-icons">
+            <ul >
+              {
+                socialIcons.map((item) => {
+                  return (<li key={item.name}>
+                    <div className={`social-circle ${item.name}`}>
+                      <i style={{ color: `${item.iconColor}`, fontSize: '12px' }} class={`fab fa-${item.name}`} />
+                    </div>
+                  </li>);
+                })
+              }
+            </ul>
+          </div>
+          <div className="header-buttons">
+            <button className="top-buttons" style={{ marginRight: '5px' }}>Register a Case</button>
+            <button className="top-buttons">Sterilize a stray animal</button>
           </div>
         </div>
       </div>
