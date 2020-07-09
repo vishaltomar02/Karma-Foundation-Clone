@@ -1,38 +1,284 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  --primary-app-color: #fff212;
+  --font-color: #373435;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  color: var(--primary-app-color);
+  font-family: 'Roboto', sans-serif;
+}
+.app {
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.header {
+  height: 5.5vh;
+  width: 100vw;
+  background: #373435;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header-inner {
+  margin: 0 10%;
+  height: 100%;
+}
+
+.header-content {
+  display: grid;
+  height: 100%;
+  width: 100%;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.report-email {
+  grid-column: 1/2;
+  color: var(--primary-app-color);
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.report-email > div:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.social-icons {
+  width: 50%;
+  height: 100%;
+}
+
+.social-icons ul {
+  list-style: none;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0;
+}
+
+.social-icons ul li:nth-child(n) {
+  border-right: 1px solid var(--primary-app-color);
+}
+.social-icons ul li:nth-child(1) {
+  border-left: 1px solid var(--primary-app-color);
+}
+
+.social-icons ul li {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+li .social-circle {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+li .social-circle.facebook-f {
+  border: 2px solid rgb(66, 103, 178);
+}
+
+li .social-circle.twitter {
+  border: 2px solid rgb(29, 161, 242);
+}
+
+li .social-circle.google-plus-g {
+  border: 2px solid rgb(211, 72, 54);
+}
+
+li .social-circle.linkedin-in {
+  border: 2px solid rgb(40, 103, 178);
+}
+
+li .social-circle.facebook-f:hover {
+  border: none;
+  background: rgb(66, 103, 178);
+}
+
+li .social-circle.facebook-f:hover i.fab.fa-facebook-f,
+li .social-circle.twitter:hover i.fab.fa-twitter,
+li .social-circle.google-plus-g:hover i.fab.fa-google-plus-g,
+li .social-circle.linkedin-in:hover i.fab.fa-linkedin-in {
+  color: white !important;
+}
+
+li .social-circle.twitter:hover {
+  border: none;
+  background: rgb(29, 161, 242);
+}
+
+li .social-circle.google-plus-g:hover {
+  border: none;
+  background: rgb(211, 72, 54);
+}
+
+li .social-circle.linkedin-in:hover {
+  border: none;
+  background: rgb(40, 103, 178);
+}
+.header-buttons {
+  margin: 2px;
+  display: flex;
+}
+
+button.top-buttons {
+  height: 100%;
+  white-space: nowrap;
+  padding: 0 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  font-size: 14px;
+  background: var(--primary-app-color);
+  color: var(--font-color);
+}
+
+/* Menu Nav css starts from here*/
+
+.menu-nav {
+  height: 100px;
+  width: 100vw;
+  padding: 1em;
+}
+
+.menu-nav-inner {
+  margin: 0 8%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 25% 55% 20%;
+}
+
+.logo-container {
+  grid-column: 1/2;
+}
+
+.logo-container img {
+  height: 100px;
+  width: 100px;
+  display: inline-block;
+  margin-top: -15px;
+}
+
+.nav-options-container {
+  grid-column: 2/3;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+  list-style: none;
+  margin-top: -10px;
+}
+
+.nav-options-container .nav-option {
+  margin: 0 8px;
+  height: 60%;
+  padding: 10px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  color: var(--font-color);
+}
+
+.nav-options-container .nav-option:hover {
+  color: var(--primary-app-color);
+}
+
+.nav-options-container .nav-option.active {
+  color: var(--primary-app-color);
+  background: var(--font-color);
+}
+
+.nav-options-container .nav-option a{
+  display: flex;
+  white-space: nowrap;
+  text-decoration: none;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: inherit;
+}
+
+.nav-buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: -10px;
+  height: 100%;
+}
+
+.nav-buttons .shadow-buttons {
+  padding: 12px;
+  background: var(--primary-app-color);
+  font-size: 17px;
+  border: none;
+  border-radius: 5px;
+  white-space: nowrap;
+  cursor: pointer;
+  box-shadow: 0 2px 2px rgba(0,0,0, 0.3);
+}
+
+.carousel-container {
+  height: 82vh;
+  position: relative;
+  overflow: hidden;
+}
+
+
+.carousel-container .carousel-left-arrow, .carousel-right-arrow{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.carousel-container .carousel-left-arrow:hover + .i.fas.fa-chevron-left, .carousel-container.carousel-right-arrow:hover + .i {
+  transform: scale(1.2);
+}
+
+.carousel-container .carousel-left-arrow {
+  left: 0;
+}
+
+.carousel-container .carousel-right-arrow {
+  right: 0;
+}
+
+/* .carousel-container .carousel-left-arrow:hover, .carousel-container .carousel-right-arrow:hover {
   color: white;
+} */
+
+.carousel-content {
+  height: 100%;
+  display: flex;
 }
 
-.App-link {
-  color: #61dafb;
+.slides {
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Welcome Content CSS*/
+
+.welcome-content-container {
+  height: 96vh;
+  width: 100vw;
+  background: wheat;
 }
