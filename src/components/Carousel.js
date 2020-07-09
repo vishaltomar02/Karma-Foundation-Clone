@@ -4,7 +4,7 @@ import CarouselContent from './CarouselContent';
 
 const Carousel = ({ images }) => {
 
-  const windowWidth = window.innerWidth;
+  const windowWidth = window.outerWidth;
   const [state, setState] = useState({ activeIndex: 0, xTranslate: 0, transition: 0.5 });
   const [slidesArray, setSlidesArray] = useState([images[images.length - 1], images[0], images[1]]);
 
@@ -12,10 +12,12 @@ const Carousel = ({ images }) => {
 
   const autoSlideRef = useRef();
   const transitionRef = useRef();
+  const resizeRef = useRef();
 
   useEffect(() => {
     autoSlideRef.current = handleNextSlide;
     transitionRef.current = smoothTransition;
+    resizeRef.current = handleResize;
   });
 
   useEffect(() => {
@@ -34,6 +36,10 @@ const Carousel = ({ images }) => {
 
     const mouseLeave = document.getElementById('carousel').addEventListener('mouseleave', (e) => {
       interval = setInterval(autoPlay, 3000);
+    });
+
+    const onScreenResize = window.addEventListener('resize', () => {
+      resizeRef.current();
     })
 
     return () => {
@@ -41,6 +47,7 @@ const Carousel = ({ images }) => {
       window.removeEventListener('transitionend', transitionEnd);
       window.removeEventListener('mouseleave', mouseLeave);
       window.removeEventListener('mouseenter', mouseEnter);
+      window.removeEventListener('resize', onScreenResize);
     };
     // eslint-disable-next-line
   }, []);
@@ -65,7 +72,6 @@ const Carousel = ({ images }) => {
     }
     setSlidesArray(newSlides);
     setState({ ...state, xTranslate: windowWidth, transition: 0 });
-    console.log(xTranslate);
   };
 
   function handlePreviousSlide() {
@@ -74,6 +80,11 @@ const Carousel = ({ images }) => {
 
   const handleNextSlide = () => {
     setState({ ...state, activeIndex: (activeIndex === images.length - 1) ? 0 : activeIndex + 1, xTranslate: xTranslate + windowWidth });
+  };
+
+  const handleResize = () => {
+    console.log(windowWidth);
+    setState({ ...state, xTranslate: windowWidth, transition: 0});
   };
 
   return (
