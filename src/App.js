@@ -3,6 +3,7 @@ import Header from './components/Header';
 import MenuNav from './components/MenuNav';
 import Carousel from './components/Carousel';
 import JoinTeam from './components/JoinTeam';
+import useScrollHook from './CustomHooks/useScrollHook.js';
 import PosterImage from './images/video-poster.png';
 import DogVideo from './videos/dog-video.mp4';
 
@@ -15,6 +16,9 @@ const imagesArray = [
 ];
 
 function App() {
+
+  const [setRef, inView] = useScrollHook({threshold: 0, triggerOnce: true});
+
   return (
     <div className="app">
       <Header></Header>
@@ -23,8 +27,8 @@ function App() {
         <Carousel images={imagesArray}></Carousel>
       </div>
       <div className="welcome-content-container">
-        <div className="welcome-header-text">
-          <h1>Welcome to Karma Foundation</h1>
+        <div className={`welcome-header-text ${inView ? 'fade-up' : ''}`}>
+          <h1 ref={setRef}>Welcome to Karma Foundation</h1>
         </div>
         <div className="welcome-story">
           <section className="welcome-video">

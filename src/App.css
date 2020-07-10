@@ -336,18 +336,15 @@ button.top-buttons {
   font-weight: 500;
   color: var(--font-color);
   text-transform: uppercase;
-  animation: fadeUpAppear 1.5s ease-in;
 }
 
 @keyframes fadeUpAppear{
   0% {
     opacity: 0;
-    height: 0;
-    transform: translate3d(0, 100%, 0);
+    transform: translatey(100%);
   }
   100% {
     opacity: 1;
-    height: 100%;
     transform: none;
   }
 }
@@ -450,6 +447,7 @@ button.top-buttons {
   text-transform: uppercase;
 }
 
-.join-team-inner >div, .join-team-inner h2 {
+.join-team.fade-up .join-team-inner >div, .join-team.fade-up .join-team-inner h2,
+.welcome-header-text.fade-up >h1{
   animation: fadeUpAppear 1s ease-in-out;
 }
