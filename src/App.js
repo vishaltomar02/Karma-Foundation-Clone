@@ -3,7 +3,11 @@ import Header from './components/Header';
 import MenuNav from './components/MenuNav';
 import Carousel from './components/Carousel';
 import JoinTeam from './components/JoinTeam';
-import useScrollHook from './CustomHooks/useScrollHook.js';
+import NewsAndEvents from './components/NewsAndEvents';
+import WhatWeDoCards from './components/WhatWeDoCards';
+import SponsorsComponent from './components/Sponsors';
+import Footer from './components/Footer';
+import useScrollHook from './CustomHooks/useScrollHook';
 import PosterImage from './images/video-poster.png';
 import DogVideo from './videos/dog-video.mp4';
 
@@ -33,7 +37,7 @@ function App() {
         <div className="welcome-story">
           <section className="welcome-video">
             <div>
-              <video width="100%" height="auto" style={{ minWidth: '400px' }} controls controlsList="nodownload" poster={PosterImage}>
+              <video width="100%" height="auto" controls controlsList="nodownload" poster={PosterImage}>
                 <source src={DogVideo}></source>
                   Your Browser Does Not Support The Video Tag.
               </video>
@@ -53,6 +57,10 @@ function App() {
         </div>
       </div>
       <JoinTeam />
+      <WhatWeDoCards/>
+      <NewsAndEvents/>
+      <SponsorsComponent/>
+      <Footer/>
     </div>
   );
 }
