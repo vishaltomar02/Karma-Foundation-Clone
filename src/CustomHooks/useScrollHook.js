@@ -16,7 +16,6 @@ export default function useScrollHook({threshold, triggerOnce}) {
   useEffect(() => {
     const { current: currentObserver } = observer;
     currentObserver.disconnect();
-    console.log(triggeredOnce);
     if(!node) return;
     if(!triggeredOnce) currentObserver.observe(node);
 
