@@ -559,11 +559,14 @@ button.top-buttons {
   background-size: cover;
 }
 
-.news-and-events-container .inner {
+.news-and-events-container .inner, .common-strip >div{
   height: 100%;
   width: 100%;
   padding: 0 8em;
   background: rgba(0,0,0, 0.4);
+}
+
+.news-and-events-container .inner {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 }
@@ -713,4 +716,74 @@ button.top-buttons {
   font-weight: bold;
   margin-bottom: 30px;
   text-transform: uppercase;
+}
+
+/*Common-Strip css starts from here*/
+
+.common-strip {
+  height: 20vh;
+  width: 100%;
+  background-image: url('./images/common-strip-background.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.common-strip >div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.common-strip h1 {
+  color: var(--primary-app-color);
+  font-weight: normal;
+  font-size: 32px;
+  text-transform: uppercase;
+}
+
+.breadcrumb {
+  height: 55px;
+  position: relative;
+  padding: 1.2em 4em 1.2em 2em;
+  background: #FFFFFF;
+  border: 1px solid black;
+  font-size: 14px;
+  color: var(--font-color);
+}
+
+.breadcrumb .home-button-container {
+  position: absolute;
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  left: -5%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.breadcrumb .home-button {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: var(--primary-app-color);
+  cursor: pointer;
+}
+
+.breadcrumb .home-button:hover {
+  transform: scale(1.2);
+}
+
+.breadcrumb .home-button:hover i.fas.fa-home {
+  text-decoration: underline;
+}
+
+.breadcrumb .home-button i.fas.fa-home {
+  color: var(--font-color);
+  font-size: 30px;
 }
