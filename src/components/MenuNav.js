@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
+import { NavLink} from 'react-router-dom';
 import KarmaFoundationLogo from '../images/karma-logo.jpg'
 
 const navOptions = [
-  { name: 'Home' },
-  { name: 'About Us' },
-  { name: 'Vision & Mission' },
-  { name: 'Contact Us' },
-  { name: 'Become A Volunteer' }
+  { name: 'Home', pathname: '/home'},
+  { name: 'About Us', pathname: '/about'},
+  { name: 'Vision & Mission', pathname: '/vision-n-mission' },
+  { name: 'Contact Us', pathname: 'contact' },
+  { name: 'Become A Volunteer', pathname: 'become-a-volunteer' }
 ]
 
 const MenuNav = () => {
@@ -27,7 +28,7 @@ const MenuNav = () => {
             return (
               <li key={item.name} className={`nav-option ${item.name === selectedNav ? 'active' : ''}`} onClick={() => activeNavItem(item.name)}>
                 {//eslint-disable-next-line
-                  <a href="#">{item.name}</a>}
+                  <NavLink to={{pathname: item.pathname}}>{item.name}</NavLink>}
               </li>
             );
           })}
