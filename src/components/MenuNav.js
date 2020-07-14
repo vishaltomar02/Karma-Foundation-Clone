@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavLink} from 'react-router-dom';
 import KarmaFoundationLogo from '../images/karma-logo.jpg'
 
@@ -6,12 +6,17 @@ const navOptions = [
   { name: 'Home', pathname: '/home'},
   { name: 'About Us', pathname: '/about'},
   { name: 'Vision & Mission', pathname: '/vision-n-mission' },
-  { name: 'Contact Us', pathname: 'contact' },
-  { name: 'Become A Volunteer', pathname: 'become-a-volunteer' }
+  { name: 'Contact Us', pathname: '/contact' },
+  { name: 'Become A Volunteer', pathname: '/become-a-volunteer' }
 ]
 
-const MenuNav = () => {
-  const [selectedNav, setSelectedNav] = useState('Home');
+const MenuNav = (props) => {
+  const [selectedNav, setSelectedNav] = useState('/home');
+
+  useEffect(() => {
+    const { location: {pathname} } = props;
+    setSelectedNav(pathname);
+  },[props]);
 
   const activeNavItem = (name) => {
     setSelectedNav(name);
@@ -26,7 +31,7 @@ const MenuNav = () => {
         <ul className="nav-options-container">
           {navOptions.map((item) => {
             return (
-              <li key={item.name} className={`nav-option ${item.name === selectedNav ? 'active' : ''}`} onClick={() => activeNavItem(item.name)}>
+              <li key={item.name} className={`nav-option ${item.pathname === selectedNav ? 'active' : ''}`} onClick={() => activeNavItem(item.name)}>
                 {//eslint-disable-next-line
                   <NavLink to={{pathname: item.pathname}}>{item.name}</NavLink>}
               </li>

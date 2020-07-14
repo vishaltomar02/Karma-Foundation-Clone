@@ -204,6 +204,7 @@ button.top-buttons {
 
 .logo-container {
   grid-column: 1/2;
+  width: 100px;
 }
 
 .logo-container img {
@@ -226,11 +227,12 @@ button.top-buttons {
 .nav-options-container .nav-option {
   margin: 0 8px;
   height: 60%;
-  padding: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background: none;
   color: var(--font-color);
+  transition: all 0.2s ease-in;
 }
 
 .nav-options-container .nav-option:hover {
@@ -244,11 +246,16 @@ button.top-buttons {
 
 .nav-options-container .nav-option a{
   display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 10px;
+  width: 100%;
   white-space: nowrap;
   text-decoration: none;
   font-size: 12px;
   text-transform: uppercase;
   color: inherit;
+  justify-content: center;
 }
 
 .nav-buttons {
