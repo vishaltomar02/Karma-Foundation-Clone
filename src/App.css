@@ -253,6 +253,7 @@ button.top-buttons {
   white-space: nowrap;
   text-decoration: none;
   font-size: 12px;
+  font-weight: bold;
   text-transform: uppercase;
   color: inherit;
   justify-content: center;
@@ -793,4 +794,71 @@ button.top-buttons {
 .breadcrumb .home-button i.fas.fa-home {
   color: var(--font-color);
   font-size: 30px;
+}
+
+/*About Page css starts here*/
+
+.about-content-container {
+  padding: 0 0 3em 0;
+  width: 100%;
+}
+
+.about-content-container .content, .vision-container .content {
+  padding: 0 10em;
+  height: 100%;
+}
+
+.about-page-header {
+  padding: 3em 0 0 0;
+}
+
+.about-page-header h1 {
+  font-size: 32px;
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+
+.content h4 {
+  font-size: 1.5rem;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+.content h4, .content p {
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+/* Vision Page css starts here*/
+
+.vision-container {
+  height: 45vh;
+  width: 100%;
+}
+
+/*Contact Page css starts here*/
+
+.contact-page-container {
+  height: 45vh;
+  padding: 3em 10em;
+  width: 100%;
+}
+
+.karma-address.contact span {
+  font-size: 20px;
+  color: var(--font-color);
+  margin-bottom: 20px;
+}
+
+.karma-address.contact h6 {
+  font-weight: normal;
+  font-size: 17px;
+}
+
+.social-icons.contact {
+  margin-top: 20px;
+}
+
+.social-icons.contact ul li:nth-child(n) {
+  border: none;
 }
