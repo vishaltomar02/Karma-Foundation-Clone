@@ -456,6 +456,32 @@ button.top-buttons {
   animation: fadeUpAppear 1s ease-in-out;
 }
 
+@media screen and (max-width: 768px)
+{
+  .join-team .join-team-inner{
+    padding: 0 6em;
+  }
+  .join-team-inner div:nth-child(1){
+    font-size: 35px;
+  }
+  .join-team .join-team-inner h2{
+    font-size: 1em;
+  }
+}
+
+@media screen and (max-width: 576px)
+{
+  .join-team .join-team-inner{
+    padding: 0 4em;
+  }
+  .join-team-inner div:nth-child(1){
+    font-size: 1.5em;
+  }
+  .join-team .join-team-inner h2{
+    font-size: 0.8em;
+  }
+}
+
 .what-we-do-container {
   width: 100vw;
   padding: 0 12em 5em 12em;
@@ -467,6 +493,29 @@ button.top-buttons {
   grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
   grid-gap: 2em;
   width: 100%;
+}
+
+@media screen and (max-width: 992px)
+{
+  .what-we-do-container{
+    padding: 0 2.5em 4em 2.5em;
+  }
+  .big-cards-container {
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  }
+}
+
+@media screen and (max-width: 768px)
+{
+  .what-we-do-container{
+    padding: 0 2em 4em 2em;
+  }
+}
+@media screen and (max-width: 576px)
+{
+  .what-we-do-container{
+    padding: 0 1.2em 2em 1.2em;
+  }
 }
 
 .big-cards-container .what-we-do-card {
@@ -644,13 +693,35 @@ button.top-buttons {
 /*Footer css starts from here*/
 
 .footer-container {
-  height: 50vh;
+  height: auto;
   width: 100%;
   background: rgba(0,0,0,0.9);
   padding: 4em 12em;
   display: grid;
   font-size: 15px;
   grid-template-columns: 23% 18% 24% 35%;
+}
+
+@media screen and (max-width: 992px)
+{
+  .footer-container {
+    padding: 4em 4em;
+  }
+}
+
+@media screen and (max-width: 768px)
+{
+  .footer-container {
+    padding: 3em 1em;
+  }
+}
+
+@media screen and (max-width: 768px)
+{
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .footer-container .footer-items {
